@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="booking-screen" class="container active">
+    <h1>Car Ride Booking</h1>
+    <form id="rideForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+      
+      <label for="pickup">Pickup Location:</label>
+      <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+      
+      <label for="dropoff">Drop-off Location:</label>
+      <input type="text" id="dropoff" name="dropoff" placeholder="Enter drop-off location" required>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time">Time:</label>
+      <div class="time-container">
+        <input type="time" id="time" name="time" required>
+        <select id="am-pm" name="am-pm" required>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+      
+      <button type="button" id="bookRideButton">Book Ride</button>
+    </form>
+  </div>
+
+  <!-- Ride Confirmation Modal -->
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <h2>Ride Confirmation</h2>
+      <p><strong>Ride Details:</strong></p>
+      <p id="confirmation-name"></p>
+      <p id="confirmation-phone"></p>
+      <p id="confirmation-pickup"></p>
+      <p id="confirmation-dropoff"></p>
+      <p id="confirmation-date"></p>
+      <p id="confirmation-time"></p>
+      <button id="newRideButton">Book New Ride</button>
+    </div>
+  </div>
+
+  <button id="checkRidesButton">View All Booked Rides</button>
+
+  <div id="rides-list-screen" class="container hidden">
+    <h1>All Booked Rides</h1>
+    <table id="rides-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Pickup</th>
+          <th>Drop-off</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id="rides-list-body">
+        <!-- List of booked rides will appear here -->
+      </tbody>
+    </table>
+    <button id="backToBooking">Back to Booking</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
