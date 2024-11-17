@@ -29,6 +29,11 @@ body {
   display: none; /* Hides the element */
 }
 
+/* Hide the button when "View My Rides" container is active */
+.container.active #view-rides-button {
+  display: none; /* Hide the button */
+}
+
 /* Modal Styles */
 .modal {
   display: none; /* Hidden by default */
@@ -157,6 +162,92 @@ table td {
   background: rgba(255, 255, 255, 0.1); /* Even lighter background for rows */
 }
 
-.hidden {
-  display: none; /* Hide elements */
+/* Mobile View */
+@media (max-width: 768px) {
+  table {
+    font-size: 12px; /* Smaller font size for better fit */
+  }
+
+  table th, table td {
+    padding: 8px; /* Reduced padding */
+  }
+
+  /* Stack table headers for small screens */
+  table th {
+    display: block;
+    text-align: left;
+  }
+
+  table td {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px; /* Space between rows */
+    border: none;
+  }
+
+  /* Add labels for the table data in mobile view */
+  table td:before {
+    content: attr(data-label); /* Show the column label before the data */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Hide the first column (Name) for better view on small screens */
+  table td:first-child {
+    display: none;
+  }
 }
+
+/* Error Popup Styling */
+#error-popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Sit on top of the page */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
+}
+
+#error-popup .modal-content {
+  background-color: #8B0000; /* Dark Red background to match the error theme */
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+#error-popup .modal-content h2 {
+  color: white;
+}
+
+#error-popup .modal-content #error-message {
+  color: white;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+#error-popup .modal-content button {
+  background: #d85a50; /* Darker coral on hover */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#error-popup .modal-content button:hover {
+  background: #ff6f61; /* Coral color on hover */
+}
+
+
+
+
+
+
+
