@@ -140,16 +140,17 @@ button:hover {
 }
 
 /* All Booked Rides Table Styling */
+/* All Booked Rides Table Styling */
 table {
   width: 100%;
   margin: 20px 0;
-  border-collapse: collapse;
+  border-collapse: collapse; /* Ensures borders between table cells merge */
   background: #000; /* Set table background color to black */
 }
 
 table th, table td {
   border: 1px solid white;
-  padding: 10px;
+  padding: 12px;
   text-align: left;
   color: white; /* Ensure text color is white for readability */
 }
@@ -162,42 +163,26 @@ table td {
   background: rgba(255, 255, 255, 0.1); /* Even lighter background for rows */
 }
 
-/* Mobile View */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
   table {
-    font-size: 12px; /* Smaller font size for better fit */
+    font-size: 12px; /* Slightly smaller font size for mobile screens */
   }
 
   table th, table td {
-    padding: 8px; /* Reduced padding */
+    padding: 8px; /* Reduced padding for mobile */
   }
 
-  /* Stack table headers for small screens */
-  table th {
-    display: block;
-    text-align: left;
-  }
-
-  table td {
-    display: block;
-    text-align: left;
-    margin-bottom: 10px; /* Space between rows */
-    border: none;
-  }
-
-  /* Add labels for the table data in mobile view */
-  table td:before {
-    content: attr(data-label); /* Show the column label before the data */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  /* Hide the first column (Name) for better view on small screens */
-  table td:first-child {
-    display: none;
+  /* Keep the table structure normal on small screens */
+  table th, table td {
+    display: table-cell; /* Ensure each cell is displayed normally */
   }
 }
+
+
+
+
+
 
 /* Error Popup Styling */
 #error-popup {
@@ -244,10 +229,3 @@ table td {
 #error-popup .modal-content button:hover {
   background: #ff6f61; /* Coral color on hover */
 }
-
-
-
-
-
-
-
