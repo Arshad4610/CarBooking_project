@@ -54,7 +54,7 @@
   </div>
 
   <button id="checkRidesButton">View My Booked Rides</button>
-
+  <br></br>
   <div id="rides-list-screen" class="container hidden">
     <h1>All Booked Rides</h1>
     <table id="rides-list">
@@ -73,6 +73,15 @@
       </tbody>
     </table>
     <button id="backToBooking">Back to Booking</button>
+  </div>
+  
+  <!-- Error Popup -->
+  <div id="error-popup" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Error</h2>
+      <p id="error-message"></p>
+      <button id="close-error-btn">Close</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
