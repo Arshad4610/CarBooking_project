@@ -58,7 +58,7 @@
 
     /* Dropdown Menu Styles */
     nav ul li ul {
-      display: block; /* Make dropdown always visible */
+      display: none;
       position: absolute;
       top: 50px; /* Space below Home button */
       left: 50%;
@@ -70,6 +70,10 @@
       z-index: 1000; /* Ensure dropdown stays on top */
       text-align: center;
       width: max-content;
+    }
+
+    nav ul li:hover ul {
+      display: block;
     }
 
     nav ul li ul li {
