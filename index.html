@@ -39,6 +39,7 @@
       text-decoration: none;
       display: block;
       position: relative; /* To position the arrow */
+      cursor: pointer;
     }
 
     /* Add an arrow to the Home button */
@@ -72,10 +73,6 @@
       width: max-content;
     }
 
-    nav ul li:hover ul {
-      display: block;
-    }
-
     nav ul li ul li {
       display: block; /* Items appear vertically */
     }
@@ -95,7 +92,6 @@
     .container {
       text-align: center;
       margin-top: 100px; /* Start below navigation bar */
-      transition: margin-top 0.3s ease; /* Smooth transition when dropdown opens */
     }
   </style>
 </head>
@@ -105,8 +101,8 @@
   <nav>
     <ul>
       <li>
-        <a href="index.html">Home</a>
-        <ul>
+        <a href="javascript:void(0)" id="homeBtn">Home</a>
+        <ul id="dropdownMenu">
           <li><a href="admin.html">Admin Dashboard</a></li>
           <li><a href="user.html">User Dashboard</a></li>
         </ul>
@@ -116,9 +112,31 @@
 
   <div class="container">
     <h2>Welcome to the Home Page</h2>
-    <br>
     <p>Navigate to the Admin or User dashboard using the dropdown in the navigation bar.</p>
   </div>
+
+  <script>
+    // Get references to the elements
+    const homeBtn = document.getElementById('homeBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Toggle dropdown visibility when Home button is clicked
+    homeBtn.addEventListener('click', function() {
+      // Toggle the display of the dropdown menu
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function(event) {
+      if (!event.target.closest('nav')) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>
